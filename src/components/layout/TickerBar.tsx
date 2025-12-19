@@ -1,5 +1,3 @@
-import { Sparkle } from "lucide-react";
-
 import TickerItems from "@/const/ticker";
 
 const TickerBar = () => {

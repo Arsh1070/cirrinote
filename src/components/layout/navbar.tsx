@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Menu } from "lucide-react";
 
@@ -6,10 +6,19 @@ import { navItems } from "@/const/navbar";
 
 import { Logo } from "../ui/logo";
 
+const sections = [
+  { id: "home", label: "Home Logo" },
+  { id: "about", label: "About Logo" },
+  { id: "features", label: "Features Logo" },
+  { id: "contact", label: "Contact Logo" }, // sh
+];
+
 /* max - w - screen - xl; */
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLogo, setActiveLogo] = useState(sections[0].label);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +28,42 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: [0.4],
+      // watch both "any visibility" and "60% visibility"
+    };
+
+    observerRef.current = new IntersectionObserver((entries) => {
+      // find the most visible entry
+      let mostVisible: IntersectionObserverEntry | null = null;
+
+      entries.forEach((entry) => {
+        if (
+          !mostVisible ||
+          entry.intersectionRatio > mostVisible.intersectionRatio
+        ) {
+          mostVisible = entry;
+        }
+      });
+
+      if (mostVisible && mostVisible.isIntersecting) {
+        const matched = sections.find((s) => s.id === mostVisible!.target.id);
+        if (matched) setActiveLogo(matched.label);
+      }
+    }, options);
+
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observerRef.current?.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, []);
+
   return (
     <nav
       className={`fixed start-0 top-0 z-20 w-full transition-all duration-300 md:top-8 ${
@@ -30,13 +75,14 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between p-6 sm:px-10 sm:py-6">
         <a
           href="#home"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center space-x-3 text-white rtl:space-x-reverse"
         >
-          <Logo
+          {activeLogo}
+          {/*  <Logo
             src="/icons/Logo.svg"
             alt="logo"
             className="h-[24px] w-[93px] sm:h-[44px] sm:w-[169px]"
-          />
+          /> */}
         </a>
         <div className="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <button className="group relative flex items-center overflow-hidden rounded-full bg-white p-0.5">

@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
 
+// import { TailwindIndicator } from "../tailwind-indicator";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import TickerBar from "./TickerBar";
-
-//import { TailwindIndicator } from "../tailwind-indicator";
 
 const RootLayout = () => {
   return (
