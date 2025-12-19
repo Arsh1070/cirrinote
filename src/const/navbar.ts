@@ -4,4 +4,5 @@ export const navItems = [
   { path: "#contact", name: "FAQs" },
   { path: "#contact", name: "Contact" },
   { path: "#help", name: "Help" },
+  { path: "#mobile", name: "Mobile" },
 ];
