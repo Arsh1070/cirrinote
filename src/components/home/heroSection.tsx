@@ -34,7 +34,7 @@ const HeroSection = () => {
           Redefined
         </motion.h1>
       </section>
-      <section className="bg-black md:hidden">
+      <section id="home" className="bg-black md:hidden">
         <div className="flex flex-col items-center justify-start pb-25">
           <div>
             <h1 className="text-5xl text-white">Note Taking</h1>

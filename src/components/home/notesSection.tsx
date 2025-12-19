@@ -44,7 +44,10 @@ const NotesSection = () => {
           </div>
         </motion.h1>
       </section>
-      <section className="flex flex-col items-center justify-between bg-[#1c1c1c] px-6 py-30 sm:hidden">
+      <section
+        id="about"
+        className="flex flex-col items-center justify-between bg-[#1c1c1c] px-6 py-30 sm:hidden"
+      >
         <h2 className="text-center text-2xl text-white">
           An extraordinary note for{" "}
           <div className="text-[#00BB77]">makers, creators..</div>
