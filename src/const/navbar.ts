@@ -9,5 +9,5 @@ export const navItems = [
 
 sum();
 const sum = () => {
-  return 42;
+  return 32;
 };
