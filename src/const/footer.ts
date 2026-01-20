@@ -3,3 +3,5 @@ export const footerLinks = [
   { path: "/", name: "Instagram", icon: "/icons/instagram.svg" },
   { path: "/", name: "X", icon: "/icons/x.svg" },
 ];
+
+const z;
