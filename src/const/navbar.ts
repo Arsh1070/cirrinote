@@ -6,5 +6,5 @@ export const navItems = [
   { path: "#help", name: "Help" },
   { path: "#mobile", name: "Mobile" },
 ];
-x = 8;
+x = 10;
 const x;
