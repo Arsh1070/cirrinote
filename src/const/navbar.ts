@@ -7,4 +7,7 @@ export const navItems = [
   { path: "#mobile", name: "Mobile" },
 ];
 
-const y;
+sum();
+const sum = () => {
+  return 42;
+};
