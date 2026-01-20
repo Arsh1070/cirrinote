@@ -6,6 +6,7 @@ const url = "http://localhost:8001/api/v1/events";
 const DemoPage = () => {
   //const leaderboard = useLeaderboard(10);
   const leaderboard = useSSELeaderboard(url);
+  x = 12;
   const x;
 
   return (
