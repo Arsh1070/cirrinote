@@ -8,3 +8,4 @@ export const navItems = [
 ];
 x = 11;
 const x;
+const y;
