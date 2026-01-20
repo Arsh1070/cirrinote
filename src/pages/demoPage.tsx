@@ -7,7 +7,6 @@ const DemoPage = () => {
   //const leaderboard = useLeaderboard(10);
   const leaderboard = useSSELeaderboard(url);
   x = 12;
-  const x;
 
   return (
     <>
