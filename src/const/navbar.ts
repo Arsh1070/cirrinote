@@ -5,9 +5,10 @@ export const navItems = [
   { path: "#contact", name: "Contact" },
   { path: "#help", name: "Help" },
   { path: "#mobile", name: "Mobile" },
+  sdsadsad,
 ];
 
-sum();
-const sum = () => {
+sumDemo();
+const sumDemo = () => {
   return 42;
 };
