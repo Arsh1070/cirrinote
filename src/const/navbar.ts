@@ -6,3 +6,7 @@ export const navItems = [
   { path: "#help", name: "Help" },
   { path: "#mobile", name: "Mobile" },
 ];
+export const navItems = [
+  { path: "#about", name: "About" },
+  { path: "#features", name: "Features" },
+];
