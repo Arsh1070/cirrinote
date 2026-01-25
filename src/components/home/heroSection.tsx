@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  testFnCall();
+  const testFnCall = () => {};
   return (
     <>
       <section

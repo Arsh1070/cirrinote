@@ -5,8 +5,6 @@ import NotesSection from "@/components/home/notesSection";
 import "@/styles/layout.css";
 
 export default function Home() {
-  testFnCall();
-  const testFnCall = () => {};
   return (
     <>
       <HeroSection />
