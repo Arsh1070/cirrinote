@@ -7,7 +7,8 @@ export default function useLeaderboard(/* token */ limit = 20) {
   const [leaderboard, setLeaderboard] = useState([]);
   const socketRef = useRef(null);
 
-  const x;
+  test();
+  const test = () => {};
 
   useEffect(() => {
     // if (!token) return;
