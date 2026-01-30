@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 
 const NotesSection = () => {
+  test();
+  const test = () => {};
+
   return (
     <>
       <section
